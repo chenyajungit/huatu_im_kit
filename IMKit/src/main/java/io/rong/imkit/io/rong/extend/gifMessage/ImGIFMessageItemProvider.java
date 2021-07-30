@@ -219,30 +219,32 @@ public class ImGIFMessageItemProvider extends MessageProvider<GIFMessage> {
                 this.loadGif(v, content.getLocalUri(), holder);
             }
         } else {
-            int size = v.getContext().getResources().getInteger(integer.rc_gifmsg_auto_download_size);
-            if (content.getGifDataSize() <= (long)(size * 1024)) {
-                if (this.checkPermission(v.getContext())) {
-                    if (!message.getReceivedStatus().isDownload()) {
-                        message.getReceivedStatus().setDownload();
-                        this.downLoad(message.getMessage(), holder);
-                    }
-                } else if (progress != -1) {
-                    holder.startDownLoad.setVisibility(View.VISIBLE);
-                    holder.length.setVisibility(View.VISIBLE);
-                    holder.length.setText(this.formatSize(content.getGifDataSize()));
-                }
-            } else if (progress > 0 && progress < 100) {
-                holder.startDownLoad.setVisibility(  View.GONE);
-                holder.length.setVisibility(View.VISIBLE);
-                holder.length.setText(this.formatSize(content.getGifDataSize()));
-            } else if (progress != -1) {
-                holder.startDownLoad.setVisibility(View.VISIBLE);
-                holder.preProgress.setVisibility(  View.GONE);
-                holder.loadingProgress.setVisibility(  View.GONE);
-                holder.downLoadFailed.setVisibility(  View.GONE);
-                holder.length.setVisibility(View.VISIBLE);
-                holder.length.setText(this.formatSize(content.getGifDataSize()));
-            }
+            holder.img.setVisibility(View.VISIBLE);
+            this.loadGif(v, content.getRemoteUri(), holder);
+//            int size = v.getContext().getResources().getInteger(integer.rc_gifmsg_auto_download_size);
+//            if (content.getGifDataSize() <= (long)(size * 1024)) {
+//                if (this.checkPermission(v.getContext())) {
+//                    if (!message.getReceivedStatus().isDownload()) {
+//                        message.getReceivedStatus().setDownload();
+//                        this.downLoad(message.getMessage(), holder);
+//                    }
+//                } else if (progress != -1) {
+//                    holder.startDownLoad.setVisibility(View.VISIBLE);
+//                    holder.length.setVisibility(View.VISIBLE);
+//                    holder.length.setText(this.formatSize(content.getGifDataSize()));
+//                }
+//            } else if (progress > 0 && progress < 100) {
+//                holder.startDownLoad.setVisibility(  View.GONE);
+//                holder.length.setVisibility(View.VISIBLE);
+//                holder.length.setText(this.formatSize(content.getGifDataSize()));
+//            } else if (progress != -1) {
+//                holder.startDownLoad.setVisibility(View.VISIBLE);
+//                holder.preProgress.setVisibility(  View.GONE);
+//                holder.loadingProgress.setVisibility(  View.GONE);
+//                holder.downLoadFailed.setVisibility(  View.GONE);
+//                holder.length.setVisibility(View.VISIBLE);
+//                holder.length.setText(this.formatSize(content.getGifDataSize()));
+//            }
         }
 
     }
@@ -261,7 +263,9 @@ public class ImGIFMessageItemProvider extends MessageProvider<GIFMessage> {
     }
 
     private void loadGif(View v, Uri uri, ViewHolder holder) {
-        Glide.with(v.getContext()).asGif().load(uri.getPath()).into(holder.img);
+      String uriStr=uri.toString();
+        Glide.with(v.getContext()).asGif().load(uriStr).into(holder.img);
+//        Glide.with(v.getContext()).asGif().load("http://rongcloud-image.ronghub.com/image_jpeg__RC-2021-07-30_549_1627629679000.gif?e=1643181679&token=livk5rb3__JZjCtEiMxXpQ8QscLxbNLehwhHySnX:uU_BRfDrA3Jz8XpIFAIgBjQVjyw=").into(holder.img);
     }
 
     private String formatSize(long length) {
