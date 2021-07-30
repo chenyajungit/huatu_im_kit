@@ -1,0 +1,117 @@
+<resources>
+    <dimen name="divider_height">10dp</dimen>
+
+
+    <!--城市选择器-->
+    <dimen name="cp_index_bar_text_size">10sp</dimen>
+    <!--城市选择器-->
+
+    <dimen name="loading_size">75dp</dimen>
+    <dimen name="loading_size1">180dp</dimen>
+    <dimen name="loading_size2">100dp</dimen>
+    <dimen name="password_input_dialog_width">0.5dp</dimen>
+
+    <dimen name="cancel_proxy_width">280dp</dimen>
+    <dimen name="cancel_proxy_height">146dp</dimen>
+    <dimen name="round">1dp</dimen>
+    <dimen name="dimen_6">6dp</dimen>
+    <dimen name="dimen_7">7dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+
+    <dimen name="dimen_70">70dp</dimen>
+
+    <dimen name="dimen_20">20dp</dimen>
+
+    <dimen name="dimen_15">15dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_14">14dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_28">28dp</dimen>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="width_1">1px</dimen>
+    <dimen name="width_2">22px</dimen>
+    <dimen name="width_1dp">1dp</dimen>
+    <dimen name="text_size_16">10sp</dimen>
+    <dimen name="tab_text">8sp</dimen>
+    <dimen name="find_tab_text">16sp</dimen>
+    <dimen name="error_bottom_height">34dp</dimen>
+    <dimen name="text_12_dp">12dp</dimen>
+    <dimen name="di_4_dp">4dp</dimen>
+    <dimen name="di_5_dp">5dp</dimen>
+    <dimen name="di_7_dp">7dp</dimen>
+    <dimen name="di_35_dp">35dp</dimen>
+    <dimen name="di_14_dp">14dp</dimen>
+    <dimen name="di_13_dp">13dp</dimen>
+    <dimen name="di_15_dp">15dp</dimen>
+    <dimen name="di_10_dp">10dp</dimen>
+    <dimen name="di_11_dp">11dp</dimen>
+    <dimen name="di_12_dp">12dp</dimen>
+    <dimen name="di_21_dp">21dp</dimen>
+    <dimen name="di_40_dp">40dp</dimen>
+    <dimen name="di_44_dp">44dp</dimen>
+    <dimen name="di_32_dp">32dp</dimen>
+    <dimen name="di_34_dp">34dp</dimen>
+    <dimen name="di_25_dp">25dp</dimen>
+    <dimen name="di_30_dp">30dp</dimen>
+    <dimen name="di_31_dp">31dp</dimen>
+    <dimen name="di_38_dp">38dp</dimen>
+    <dimen name="di_39_dp">39dp</dimen>
+    <dimen name="di_100_dp">100dp</dimen>
+    <dimen name="di_6_dp">6dp</dimen>
+    <dimen name="di_54_dp">54dp</dimen>
+    <dimen name="di_123_dp">123dp</dimen>
+    <dimen name="di_160_dp">160dp</dimen>
+    <dimen name="di_80_dp">80dp</dimen>
+    <dimen name="di_2_dp">2dp</dimen>
+    <dimen name="di_300_dp">300dp</dimen>
+    <dimen name="di_150_dp">150dp</dimen>
+    <dimen name="di_28_dp">28dp</dimen>
+    <dimen name="di_8_dp">8dp</dimen>
+    <dimen name="di_211_dp">211dp</dimen>
+    <dimen name="di_17_dp">17dp</dimen>
+    <dimen name="di_60_dp">60dp</dimen>
+    <dimen name="di_77_dp">77dp</dimen>
+    <dimen name="di_370_dp">370dp</dimen>
+    <dimen name="di_140_dp">140dp</dimen>
+    <dimen name="di_130_dp">130dp</dimen>
+    <dimen name="di_16_dp">16dp</dimen>
+    <dimen name="di_270_dp">270dp</dimen>
+    <dimen name="di_23_dp">23dp</dimen>
+    <dimen name="di_20_dp">20dp</dimen>
+    <dimen name="di_24_dp">24dp</dimen>
+    <dimen name="di_18_dp">18dp</dimen>
+    <dimen name="di_85_dp">85dp</dimen>
+    <dimen name="di_3_dp">3dp</dimen>
+    <dimen name="di_50_dp">50dp</dimen>
+    <dimen name="di_37_dp">37dp</dimen>
+    <dimen name="di_9_dp">9dp</dimen>
+    <dimen name="di_98_dp">98dp</dimen>
+    <dimen name="di_110_dp">110dp</dimen>
+    <dimen name="di_108_dp">108dp</dimen>
+    <dimen name="di_137_dp">137dp</dimen>
+    <dimen name="di_76_dp">76dp</dimen>
+    <dimen name="di_22_dp">22dp</dimen>
+    <dimen name="di_47_dp">47dp</dimen>
+    <dimen name="di_250_dp">250dp</dimen>
+    <dimen name="di_55_dp">55dp</dimen>
+    <dimen name="di_45_dp">45dp</dimen>
+    <dimen name="di_70_dp">70dp</dimen>
+    <dimen name="di_190_dp">190dp</dimen>
+    <dimen name="di_168_dp">168dp</dimen>
+    <dimen name="di_33_dp">33dp</dimen>
+    <dimen name="di_65_dp">65dp</dimen>
+    <dimen name="di_180_dp">180dp</dimen>
+    <dimen name="di_64_dp">64dp</dimen>
+    <dimen name="di_48_dp">48dp</dimen>
+    <dimen name="di_135_dp">135dp</dimen>
+    <dimen name="di_415_dp">415dp</dimen>
+    <!--<dimen name="tab_icon">29%</dimen>-->
+    <!--<dimen name="tab_height">12%</dimen>-->
+    <!-- 水印 -->
+    <dimen name="edit_waterMark_width">63dp</dimen>
+    <dimen name="edit_waterMark_height">57dp</dimen>
+</resources>

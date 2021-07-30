@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Messages IDs -->
+    <item type="id" name="auto_focus"/>
+    <item type="id" name="decode"/>
+    <item type="id" name="decode_failed"/>
+    <item type="id" name="decode_succeeded"/>
+    <item type="id" name="encode_failed"/>
+    <item type="id" name="encode_succeeded"/>
+    <item type="id" name="launch_product_query"/>
+    <item type="id" name="quit"/>
+    <item type="id" name="restart_preview"/>
+    <item type="id" name="return_scan_result"/>
+    <item type="id" name="search_book_contents_failed"/>
+    <item type="id" name="search_book_contents_succeeded"/>
+
+    <item type="id" name="blurring_view"/>
+
+    <item type="id" name="im_ui_message"></item>
+
+    <item type="id" name="new_oa_tag_position"></item>
+    <item type="id" name="new_oa_tag_title_et"></item>
+    <item type="id" name="new_oa_tag_number_et"></item>
+    <item type="id" name="new_oa_tag_pic_list"></item>
+    <item type="id" name="new_oa_tag_company_name"></item>
+    <item type="id" name="new_oa_tag_stamp_type"></item>
+    <item type="id" name="new_oa_tag_entity"></item>
+    <item type="id" name="new_oa_tag_stamp_company"></item>
+    <item type="id" name="new_oa_tag_stamp_reson"></item>
+    <item type="id" name="new_oa_tag_stamp_engraving_count"></item>
+    <item type="id" name="new_oa_tag_stamp_engraving_content"></item>
+    <item type="id" name="new_oa_tag_stamp_engraving_number"></item>
+    <item type="id" name="new_oa_tag_stamp_engraving_select"></item>
+    <item type="id" name="new_oa_tag_stamp_hold"></item>
+    <item type="id" name="new_oa_tag_value"></item>
+
+    <item type="id" name="gongsi_zhengjian_shiyong_shenqing"></item>
+    <item type="id" name="teshu_yingji_shenqing"></item>
+    <item type="id" name="chanping_zengzhi_shenqing"></item>
+
+    <item type="id" name="guangzhoufenxiao_chuzufang"></item>
+    <item type="id" name="guangzhoufenxiao_chendzufang"></item>
+
+    <item type="id" name="guangdongshoujihao_mingxi"></item>
+    <item type="id" name="guangdongshoujihao_taocan"></item>
+
+    <item type="id" name="ehr_xin_id"></item>
+    <item type="id" name="ehr_xin_type"></item>
+    <item type="id" name="ehr_xin_handle"></item>
+
+    <item type="id" name="tag_object"></item>
+    <item type="id" name="tag_boolean"></item>
+    <item type="id" name="tag_url"></item>
+
+
+    <item type="id" name="tag_1"></item>
+    <item type="id" name="tag_2"></item>
+    <item type="id" name="tag_3"></item>
+    <item type="id" name="glide_tag"></item>
+    <item type="id" name="tag_object_1"></item>
+
+
+
+    <item name="N_monthCalendar" type="id" />
+    <item name="N_weekCalendar" type="id" />
+</resources>
