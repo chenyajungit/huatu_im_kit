@@ -3,7 +3,6 @@ package com.huatu.imSdk;
 import android.app.Application;
 
 import io.rong.imkit.RongIM;
-import io.rong.imkit.io.rong.extend.gifMessage.ImGIFMessageItemProvider;
 import io.rong.imkit.io.rong.extend.init.RongHelper;
 
 public class SdkApplication extends Application {
@@ -12,7 +11,7 @@ public class SdkApplication extends Application {
         super.onCreate();
         String appKey = "6tnym1br64wq7";
         RongHelper rongHelper=new RongHelper();
-        rongHelper.configEsb(SdkApplication.this,"10001004","asdfasdfasd",2,true);
+        rongHelper.configEsb(SdkApplication.this,"10001004","asdfasdfasd",2,true,false);
         rongHelper.rongInit(SdkApplication.this, appKey, true, new RongHelper.InitImListener() {
             @Override
             public void doBeforeInit() {

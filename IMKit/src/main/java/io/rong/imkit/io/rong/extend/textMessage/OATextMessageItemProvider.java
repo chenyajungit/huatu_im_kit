@@ -402,16 +402,16 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
 
 
     //调用服务器接口从而获取问题答案
-    public void requestService(final String userId, final String officialAccountId, final String timestamp, final String random, final String secret, final String originalUrl){
+    public void requestService(final String userId, final String officialAccountCode, final String timestamp, final String random, final String secret, final String originalUrl){
         new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void run() {
-                String md5= MD5.encrypt(userId+officialAccountId+timestamp+random+secret);
+                String md5= MD5.encrypt(userId+officialAccountCode+timestamp+random+secret);
                 String url =originalUrl;
                 okhttp3.Request request = new okhttp3.Request.Builder()
                         .addHeader("userId",userId)
-                        .addHeader("officialAccountId",officialAccountId)
+                        .addHeader("officialAccountCode",officialAccountCode)
                         .addHeader("timestamp",timestamp)
                         .addHeader("random8",random)
                         .addHeader("secret",secret)
@@ -580,7 +580,7 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
 
 
 
-    private void textOperation(View v,TextMessage content,  UIMessage data,TextView textView){
+    private void textOperation(View v, TextMessage content, UIMessage data, TextView textView){
         MessageContent content1 = data.getContent();
         if (content instanceof TextMessage) {
             TextMessage textMessage = (TextMessage) content1;

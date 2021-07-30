@@ -1,4 +1,5 @@
 package io.rong.imkit.io.rong.extend;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -11,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 
 import org.json.JSONObject;
 
@@ -58,6 +58,8 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
     //ESB的id和secret
     public static final String ESB_APP_ID="ESB_APP_ID";
     public static final String ESB_APP_SECRET="ESB_APP_SECRET";
+    //是否切换到ESB的正式环境,正式的为true 否则为false
+    public static final String ESB_PRODUCTION_ENVIRONMENT="ESB_PRODUCTION_ENVIRONMENT";
     //每两次推送欢迎语之间,间隔的分钟数。需要推送时，此字段必填，默认为5分钟
     public static final String INTERVAL="INTERVAL";
     //是否在查询的同时，直接推送欢迎语
@@ -151,6 +153,7 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
                     String secret="";
                     Integer interval=null;
                     Boolean pushFlag=null;
+                    boolean isProduct=false;
                     SharedPreferencesUtil sharedPreferencesUtil=new SharedPreferencesUtil(ConversationActivity.this);
                     appId=(String) sharedPreferencesUtil.getSharedPreference(ESB_APP_ID,"");
                     secret=(String) sharedPreferencesUtil.getSharedPreference(ESB_APP_SECRET,"");
@@ -167,9 +170,21 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
                         pushFlag=Boolean.parseBoolean(pushflagStr);
                     }
 
+                    Object  isProductObj=sharedPreferencesUtil.getSharedPreference(ESB_PRODUCTION_ENVIRONMENT,"");
+                    if(isProductObj!=null){
+                        String  isProductStr=isProductObj.toString();
+                        isProduct=Boolean.parseBoolean(isProductStr);
+                    }
+                    String tempStr="";
+                    if(!isProduct){
+                        tempStr="http://dev-esb.huatu.com:8082";
+                    }else {
+                        tempStr="https://esb.huatu.com";
+                    }
 
 
-                    if(StringUtils.isEmpty(appId)||StringUtils.isEmpty(secret)){
+
+                    if(StringUtils.isEmpty(appId)|| StringUtils.isEmpty(secret)){
                         ConversationActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -179,7 +194,7 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
 
                         return;
                     }
-                    String connectUrl="http://dev-esb.huatu.com:8082/ronghub/officialAccount/pushWelcomeMsg.json";
+                    String connectUrl=tempStr+"/ronghub/officialAccount/pushWelcomeMsg.json";
                     //从UTC 1970年1月1日午夜开始经过的毫秒数,业务系统自己生成。生产环境，仅允许业务系统服务器与ESB服务器有一分钟的时间差
                     long timestamp = System.currentTimeMillis();
                     Random random = new Random();
@@ -194,7 +209,7 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
                     //生成sign
                     String sign =encoder.encodeToString(stringBuilder.toString().getBytes()).toUpperCase();
                     JSONObject jsonObject=new JSONObject();
-                    jsonObject.put("officialAccountId",mTargetId);
+                    jsonObject.put("officialAccountCode",mTargetId);
 
                     jsonObject.put("userId",sharedPreferencesUtil.getSharedPreference(RONG_IM_USER_ID,""));
                     if(pushFlag!=null){

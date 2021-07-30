@@ -12,6 +12,7 @@ import io.rong.imlib.model.UserInfo;
 
 import static io.rong.imkit.io.rong.extend.ConversationActivity.ESB_APP_ID;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.ESB_APP_SECRET;
+import static io.rong.imkit.io.rong.extend.ConversationActivity.ESB_PRODUCTION_ENVIRONMENT;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.INTERVAL;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.PUSHFLAG;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.RONG_IM_USER_ID;
@@ -43,8 +44,9 @@ public class RongHelper {
      * @param esbSecret esb的appId与secret,用来进行模板管理的,可联系南京esb相关开发老师进行配置
      * @param inteval   每两次推送欢迎语之间,间隔的分钟数。需要推送时，此字段必填
      * @param pushFlag  是否在查询的同时，直接推送欢迎语
+     * @param isESBProductionEnvironment  是否是esb生产环境,是则为true,测试环境则为false
      */
-    public void configEsb(Context context,String esbAppId,String esbSecret,Integer inteval,Boolean pushFlag) {
+    public void configEsb(Context context,String esbAppId,String esbSecret,Integer inteval,Boolean pushFlag,boolean isESBProductionEnvironment) {
         SharedPreferencesUtil sharedPreferencesUtil=new SharedPreferencesUtil(context);
         sharedPreferencesUtil.put(ESB_APP_ID,esbAppId);
         sharedPreferencesUtil.put(ESB_APP_SECRET,esbSecret);
@@ -52,7 +54,7 @@ public class RongHelper {
         sharedPreferencesUtil.put(INTERVAL,inteval+"");
         if(pushFlag!=null)
         sharedPreferencesUtil.put(PUSHFLAG,pushFlag+"");
-
+        sharedPreferencesUtil.put(ESB_PRODUCTION_ENVIRONMENT,isESBProductionEnvironment+"");
     }
 
     public interface InitImListener{
