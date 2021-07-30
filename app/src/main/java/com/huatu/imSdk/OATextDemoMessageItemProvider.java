@@ -24,6 +24,7 @@ public  class OATextDemoMessageItemProvider extends OATextMessageItemProvider {
     @Override
     public void templateClickListener(int type, int hrefType, String hrefContent) {
         Toast.makeText(mContext,hrefContent,Toast.LENGTH_SHORT).show();
+        String s;
     }
 
     @Override
