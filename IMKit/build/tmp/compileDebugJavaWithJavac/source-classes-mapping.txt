@@ -62,13 +62,17 @@ io/rong/imkit/io/rong/extend/textMessage/TemplateButtonAdapter.java
  io.rong.imkit.io.rong.extend.textMessage.TemplateButtonAdapter$ItemClickListener
 io/rong/imkit/io/rong/extend/ConversationListAdapterEx.java
  io.rong.imkit.io.rong.extend.ConversationListAdapterEx
-io/rong/imkit/io/rong/extend/init/RongHelper.java
- io.rong.imkit.io.rong.extend.init.RongHelper
- io.rong.imkit.io.rong.extend.init.RongHelper$1
- io.rong.imkit.io.rong.extend.init.RongHelper$2
- io.rong.imkit.io.rong.extend.init.RongHelper$InitImListener
 io/rong/imkit/io/rong/extend/gifMessage/ImGIFMessageItemProvider.java
  io.rong.imkit.io.rong.extend.gifMessage.ImGIFMessageItemProvider
  io.rong.imkit.io.rong.extend.gifMessage.ImGIFMessageItemProvider$1
  io.rong.imkit.io.rong.extend.gifMessage.ImGIFMessageItemProvider$DestructListener
  io.rong.imkit.io.rong.extend.gifMessage.ImGIFMessageItemProvider$ViewHolder
+io/rong/imkit/io/rong/extend/init/RongHelper.java
+ io.rong.imkit.io.rong.extend.init.RongHelper
+ io.rong.imkit.io.rong.extend.init.RongHelper$1
+ io.rong.imkit.io.rong.extend.init.RongHelper$2
+ io.rong.imkit.io.rong.extend.init.RongHelper$3
+ io.rong.imkit.io.rong.extend.init.RongHelper$3$1
+ io.rong.imkit.io.rong.extend.init.RongHelper$3$2
+ io.rong.imkit.io.rong.extend.init.RongHelper$3$3
+ io.rong.imkit.io.rong.extend.init.RongHelper$InitImListener

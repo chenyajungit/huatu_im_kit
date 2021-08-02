@@ -65,6 +65,9 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
     //是否在查询的同时，直接推送欢迎语
     public static final String PUSHFLAG="PUSHFLAG";
 
+    //进入页面当前的公众号ID
+    public static final String CURRENT_CHAT_ID="CURRENT_CHAT_ID";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getIntentData();
@@ -87,6 +90,10 @@ public class ConversationActivity extends AppCompatActivity implements RongIM.Co
 
     private void initControl(){
         conversationFragment=new ConversationFragment();
+
+        SharedPreferencesUtil sharedPreferencesUtil=new SharedPreferencesUtil(ConversationActivity.this);
+        sharedPreferencesUtil.put(CURRENT_CHAT_ID,CURRENT_TARGETID);
+
         //开启事务
         mFragmentTransaction = ConversationActivity.this.getSupportFragmentManager().beginTransaction();
         //设置为默认界面 MainHomeFragment

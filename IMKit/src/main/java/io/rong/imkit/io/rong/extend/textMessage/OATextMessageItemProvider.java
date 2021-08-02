@@ -36,6 +36,7 @@ import io.rong.imkit.RongContext;
 import io.rong.imkit.RongIM.ConversationBehaviorListener;
 import io.rong.imkit.RongIM.ConversationClickListener;
 import io.rong.imkit.emoticon.AndroidEmoji;
+import io.rong.imkit.io.rong.extend.ConversationActivity;
 import io.rong.imkit.io.rong.extend.common.LinkMovementMethodEx;
 import io.rong.imkit.io.rong.extend.common.NoUnderlineSpan;
 import io.rong.imkit.io.rong.extend.common.SharedPreferencesUtil;
@@ -53,6 +54,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 
+import static io.rong.imkit.io.rong.extend.ConversationActivity.CURRENT_CHAT_ID;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.CURRENT_TARGETID;
 import static io.rong.imkit.io.rong.extend.ConversationActivity.RONG_IM_USER_ID;
 
@@ -618,10 +620,8 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
                 for(int i=0;i<8;i++){
                     str.append(random.nextInt(10));
                 }
-
                 SharedPreferencesUtil sharedPreferencesUtil=new SharedPreferencesUtil(mContext);
-//
-                requestService( (String) sharedPreferencesUtil.getSharedPreference(RONG_IM_USER_ID,""),CURRENT_TARGETID,System.currentTimeMillis()+"",str.toString(),secret,url);
+                requestService( (String) sharedPreferencesUtil.getSharedPreference(RONG_IM_USER_ID,""),(String) sharedPreferencesUtil.getSharedPreference(CURRENT_CHAT_ID,""),System.currentTimeMillis()+"",str.toString(),secret,url);
                 break;
         }
 
