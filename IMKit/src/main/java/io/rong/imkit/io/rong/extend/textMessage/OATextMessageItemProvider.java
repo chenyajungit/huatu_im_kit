@@ -13,6 +13,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
@@ -27,6 +28,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -409,14 +412,14 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void run() {
-                String md5= MD5.encrypt(userId+officialAccountCode+timestamp+random+secret);
+                String md5= md5(userId+officialAccountCode+timestamp+random+secret);
                 String url =originalUrl;
                 okhttp3.Request request = new okhttp3.Request.Builder()
                         .addHeader("userId",userId)
                         .addHeader("officialAccountCode",officialAccountCode)
                         .addHeader("timestamp",timestamp)
-                        .addHeader("random8",random)
-                        .addHeader("secret",secret)
+                        .addHeader("random",random)
+//                        .addHeader("secret",secret)
                         .addHeader("token",md5)
                         .url(url).get().build();
                 OkHttpClient okHttpClient = new OkHttpClient();
@@ -440,6 +443,28 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
 
 
 
+    public  String md5(String string) {
+        if (TextUtils.isEmpty(string)) {
+            return "";
+        }
+        MessageDigest md5 = null;
+        try {
+            md5 = MessageDigest.getInstance("MD5");
+            byte[] bytes = md5.digest(string.getBytes());
+            String result = "";
+            for (byte b : bytes) {
+                String temp = Integer.toHexString(b & 0xff);
+                if (temp.length() == 1) {
+                    temp = "0" + temp;
+                }
+                result += temp;
+            }
+            return result;
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
 
 
