@@ -61,39 +61,6 @@ public class MainActivity extends AppCompatActivity implements RongIM.Conversati
         },MainActivity.this);
 
 
-
-
-//        RongIM.connect(token, new RongIMClient.ConnectCallback() {
-//            @Override
-//            public void onTokenIncorrect() {
-//                String s1="";
-//            }
-//
-//            @Override
-//            public void onSuccess(String s) {
-//
-//                String s1="";
-//
-//                RongIM.setConversationListBehaviorListener(MainActivity.this);
-//                initConversationList();
-//
-//                //开启事务
-//                mFragmentTransaction = MainActivity.this.getSupportFragmentManager().beginTransaction();
-//                //设置为默认界面 MainHomeFragment
-//                mFragmentTransaction.add(R.id.conversationlist, mConversationListFragment).commitAllowingStateLoss(); //开启事务
-//
-//                //连接成功
-//                //请注意，此处必须传入 activity 上下文。
-////                RouteUtils.routeToConversationListActivity(MainActivity.this, "");
-//
-//            }
-//
-//            @Override
-//            public void onError(RongIMClient.ErrorCode errorCode) {
-//                String s1="";
-//            }
-//
-//        });
     }
 
     private Fragment initConversationList() {
@@ -106,14 +73,6 @@ public class MainActivity extends AppCompatActivity implements RongIM.Conversati
                     .appendQueryParameter(Conversation.ConversationType.SYSTEM.getName(), "true")//系统
                     .appendQueryParameter(Conversation.ConversationType.APP_PUBLIC_SERVICE.getName(), "false")//公共服务
                     .build();
-//            mConversationsTypes = new Conversation.ConversationType[]{Conversation.ConversationType.PRIVATE,
-//                    Conversation.ConversationType.GROUP,
-//                    Conversation.ConversationType.SYSTEM,
-//                    Conversation.ConversationType.PUBLIC_SERVICE,
-//                    Conversation.ConversationType.PUSH_SERVICE,
-//                    Conversation.ConversationType.APP_PUBLIC_SERVICE,
-//            };
-
             conversationListFragment.setUri(uri);
             mConversationListFragment = conversationListFragment;
             return conversationListFragment;

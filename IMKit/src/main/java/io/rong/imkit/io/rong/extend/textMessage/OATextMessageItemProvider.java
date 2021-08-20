@@ -572,7 +572,7 @@ public abstract class OATextMessageItemProvider extends IContainerItemProvider.M
             @Override
             public void onClick(View view) {
                 //点击之后
-                commonTextMessageClickListener(v,messageId);
+                commonTextMessageClickListener(view,messageId);
             }
         });
 
